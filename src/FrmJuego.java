@@ -102,8 +102,15 @@ public class FrmJuego extends JFrame {
     private int Lanzamientos, Cenas;
 
     private void iniciar() {
+        Lanzamientos = 0;
+        Cenas = 0;
+        lblLanzamientos.setText(String.valueOf(Lanzamientos));
+        lblCenas.setText(String.valueOf(Cenas));
     }
 
+    /**
+     * 
+     */
     private void Lanzar() { 
         dado1.lanzar(r);
         dado1.mostrar(lblDado1);
@@ -113,8 +120,11 @@ public class FrmJuego extends JFrame {
 
         Lanzamientos++;
         lblLanzamientos.setText(String.valueOf(Lanzamientos));
+
+        if (dado1.getNumero() == 6 && dado2.getNumero() >= 11) {
+            Cenas++;
+            lblCenas.setText(String.valueOf(Cenas));
+        }
     }
-
-
 }
 

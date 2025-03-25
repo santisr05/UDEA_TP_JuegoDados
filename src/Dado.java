@@ -20,4 +20,8 @@ public class Dado {
         
     }
 
+    public int getNumero() {
+        return numero;
+    }   
+
 }
